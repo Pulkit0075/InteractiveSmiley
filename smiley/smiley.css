@@ -1,0 +1,221 @@
+@keyframes blink{
+    0% {height: 200px;
+        width: 190px;
+        background-color: rgb(233, 233, 233);
+        border-radius: 50%;}
+    1.6%{margin-top: 190px;
+        height: 10px;
+        width: 190px;
+        background-color: rgb(189, 188, 188);
+        border-radius: 20%;}
+    3.2%{ margin-top: 0px;
+        height: 200px;
+        width: 190px;
+        background-color: rgb(233, 233, 233);
+        border-radius: 50%;
+    }
+    100%{
+        margin-top: 0px;
+        height: 200px;
+        width: 190px;
+        background-color: rgb(233, 233, 233);
+        border-radius: 50%;
+    }
+}
+
+@keyframes insideTransparent{
+    0% {background-color: rgba(204, 204, 204, 0.856)}
+    1.6%{background-color: rgba(204, 204, 204, 0.178)}
+    3.2%{background-color: rgba(204, 204, 204, 0.856);}
+    100%{background-color: rgba(204, 204, 204, 0.856);}
+}
+
+@keyframes insideTransparentB{
+    0% {background-color: rgba(12, 12, 12, 0.808);}
+    1.6%{background-color: rgba(204, 204, 204, 0.178);}
+    3.2%{background-color: rgba(12, 12, 12, 0.808);}
+    100%{background-color: rgba(12, 12, 12, 0.808);}
+}
+
+
+
+@keyframes mouth{
+    0%{
+        margin-top: 0px;
+        height: 200px;
+        width: 190px;
+        border-radius: 50%;}
+    45%{
+        margin-top: 0px;
+        height: 200px;
+        width: 190px;
+        border-radius: 50%;}
+    50%{margin-top: 70px;
+        height: 30px;
+        width: 190px;
+        border-radius: 50%;}
+    95%{margin-top: 70px;
+        height: 30px;
+        width: 190px;
+        border-radius: 50%;}
+    100%{margin-top: 0px;
+        height: 200px;
+        width: 190px;
+        border-radius: 50%;}
+}
+
+
+.body{
+    display: flex;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    
+}
+
+
+#base {
+    height: 600px;
+    width: 600px;
+    background-color: rgb(250, 189, 20);
+    border-radius: 50%;
+    display: block;
+    z-index: 0; 
+    box-shadow: 0 30px 40px rgba(0,0,0,.1);
+    
+}
+
+#base2 {
+    height: 550px;
+    width: 550px;
+    background-color: rgb(248, 198, 60);
+    border-radius: 50%;
+    display: flex;
+    z-index: -1; 
+    transform: translate(30px,30px); 
+    box-shadow: 0 30px 40px rgba(0,0,0,.1);
+
+}
+
+/* socket area */
+
+.socket{
+    height: 200px;
+    width: 190px;
+    background-color: rgb(233, 233, 233);
+    border-radius: 50%;
+    display: flex;
+    z-index: 0; 
+    position: fixed;
+    animation-name: blink;
+    animation-duration: 11.22s;
+    animation-iteration-count:infinite;
+    
+    
+}
+
+#leftS{
+    transform: translate(60px,100px);
+}
+
+#rightS{
+    transform: translate(360px,100px);
+}
+
+
+/* pupil area (grey)*/
+
+.greypart{
+    height: 110px;
+    width: 90px;
+    background-color: rgba(204, 204, 204, 0.856);
+    border-radius: 50%;
+    display: flex;
+    z-index: 1; 
+    position: fixed;   
+    animation: none;
+    animation-name: insideTransparent;
+    animation-duration: 11.22s;
+    animation-iteration-count:infinite;
+}
+
+
+
+
+
+#leftG{
+    transform: translate(762px,375px);
+}
+
+#rightG{
+    transform: translate(1060px,375px);
+}
+
+
+/* pupil area (black) */
+
+.blackpart{
+    height: 50px;
+    width: 45px;
+    background-color: rgba(12, 12, 12, 0.808);
+    border-radius: 50%;
+    display: block;
+    z-index: 2; 
+    position: fixed;   
+    animation-name: insideTransparentB;
+    animation-duration: 11.22s;
+    animation-iteration-count:infinite;
+    
+}
+
+#leftB{
+    transform: translate(785px,405px);
+}
+
+#rightB{
+    transform: translate(1085px,405px);
+}
+
+/* mouth */
+
+.mouth{
+    height: 200px;
+    width: 190px;
+    background-color: rgba(0, 0, 0, 0.678);
+    border-radius: 50%;
+    display: flex;
+    z-index: 0; 
+    position: fixed;
+
+    transform: translate(850px,605px);
+    animation-name: mouth;
+    animation-duration: 30s;
+    animation-iteration-count:infinite;
+}
+
+#timeChanger{
+    
+    display: flex;
+    position: fixed;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: whitesmoke;
+    border: none;
+    box-shadow: 0 30px 40px rgba(0,0,0,.1) ;
+}
+
+@keyframes hoverColourTimeChanger{
+
+    from{background-color: whitesmoke;}
+    to{background-color: rgb(187, 187, 187);}
+
+}
+
+#timeChanger:hover{
+    animation: hoverColourTimeChanger;
+    animation-duration: 300ms;
+    animation-iteration-count: 1;
+    background-color: rgb(187, 187, 187);
+}
